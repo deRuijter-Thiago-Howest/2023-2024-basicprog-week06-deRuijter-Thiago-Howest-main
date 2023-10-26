@@ -27,7 +27,7 @@ def schrijf_input_naar_bestand(bestandsnaam:str) -> None:
     fo = open(bestandsnaam, "w")   # vergeet niet de rechten goed te zetten (via de letter "w")
 
     lijn = input("Geef een nieuwe regel op, of druk op enter om te eindigen:> dit is een test:> ")
-    while lijn != " ":
+    while lijn != "":
         fo.write(lijn + "\n")  # <-----!!! pas op; vergeet het newline karakter niet!
         lijn = input("Geef een nieuwe regel op, of druk op enter om te eindigen:> dit is een test:> ")
 
