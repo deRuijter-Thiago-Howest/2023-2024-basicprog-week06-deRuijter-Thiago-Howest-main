@@ -29,6 +29,23 @@ def vertaal_letter(letter: str, dict_morse:Dict[str,str]) -> str:
     else:
         return "?"
 
+def vertaal_tekst_in_morse(zin:str, dict_morse:Dict[str,str]) -> str:
+    result = ""
+    for letter in zin:
+        #vertaal de letter naar morse
+        morse = vertaal_letter(letter, dict_morse)
+        #voeg toe aan resultaat
+        result = result + " " + morse
+
+
+    return result
+
+
+
+
+
+
+
 
 
 dict_morse = inlezen_morse_bestand("doc/morse.txt")
@@ -36,3 +53,7 @@ print(dict_morse)
 letter = input("Geef een letter op:> ")
 morse_teken = vertaal_letter(letter, dict_morse)
 print(f"Het morse teken is: {morse_teken}")
+
+zin = input("Geef een zin op:> ")
+morse_vertaling = vertaal_tekst_in_morse(zin, dict_morse)
+print(f"De vertaling van de zin is {morse_vertaling}")
